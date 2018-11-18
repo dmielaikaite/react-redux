@@ -1,45 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import YTSearch from 'youtube-api-search';
-import _ from 'lodash';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import SearchBar from './components/search_bar';
-import VideoList from './components/video_list';
-import VideoDetail from './components/video_detail';
-
-const API_KEY = 'AIzaSyDjOpu0NKU-p5HSmJNEPI_PruXY9-yiYDQ';
+import MainIndex from './components/mainPage/main_index';
+import VidoeIndex from './components/youtubePage/video_index';
 
 class App extends Component{
 
-  constructor(props){
-    super(props);
-    this.state = {
-      videos: [],
-      selectedVideo: null
-    }
-
-    this.videoSearch('ski');
-  }
-
-  videoSearch(term){
-    YTSearch({key: API_KEY, term: term}, (videos) => {
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
-      });
-    });
-  }
-
   render(){
-    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300);
-
     return (
-      <div>
-        <SearchBar handleSearchTermChange={videoSearch}/>
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList videos={this.state.videos}
-                   handleVideoSelect={selectedVideo => this.setState({selectedVideo})}/>
-      </div>
+      <Router>
+          <div>
+            <nav className="navbar navbar-light bg-faded">
+              <a className="navbar-brand"> NeedATitle </a>
+              <ul className="nav nav-tabs">
+                <li className="nav-item">
+                  <Link className="nav-link" to='/'> home </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to='/youtube'> youtube </Link>
+                </li>
+              </ul>
+            </nav>
+
+            <Route path='/' exact component={MainIndex} />
+            <Route path='/youtube' component={VidoeIndex} />
+          </div>
+      </Router>
     );
   }
 }

@@ -25,3 +25,8 @@
 .list-group-item:hover{
   background-color: #eee;
 }
+
+.nav{
+  display: flex;
+  float: right;
+}
