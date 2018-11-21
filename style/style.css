@@ -30,3 +30,19 @@
   display: flex;
   float: right;
 }
+
+.articlePublishDate{
+  float: right;
+}
+
+.articleHeader{
+  justify-content: center;
+}
+
+.article-image .img-thumbnail{
+  width: 30%;
+}
+
+.news-list{
+  margin-top: 10px;
+}

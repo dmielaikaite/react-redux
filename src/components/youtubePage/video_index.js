@@ -17,7 +17,7 @@ class VidoeIndex extends Component{
       selectedVideo: null
     }
 
-    this.videoSearch('ski');
+    this.videoSearch('tesla');
   }
 
   videoSearch(term){
