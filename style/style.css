@@ -35,14 +35,18 @@
   float: right;
 }
 
-.articleHeader{
+.article-header {
   justify-content: center;
 }
 
-.article-image .img-thumbnail{
+.article-content .img-thumbnail{
   width: 30%;
 }
 
 .news-list{
   margin-top: 10px;
+}
+
+.article-description.col-md-8{
+  float: right;
 }
