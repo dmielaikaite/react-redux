@@ -35,9 +35,11 @@ class VidoeIndex extends Component{
     return(
       <div>
         <SearchBar handleSearchTermChange={videoSearch}/>
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList videos={this.state.videos}
-                   handleVideoSelect={selectedVideo => this.setState({selectedVideo})}/>
+        <div className="row">
+          <VideoDetail video={this.state.selectedVideo}/>
+          <VideoList videos={this.state.videos}
+                     handleVideoSelect={selectedVideo => this.setState({selectedVideo})}/>
+        </div>
       </div>
     );
   }
