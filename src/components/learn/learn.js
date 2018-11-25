@@ -12,9 +12,7 @@ const LearnPage = () => {
         <input name="name" type="text" />
         <button style={{ backgroundColor: 'red' }}>{myButtonText}</button>
       </div>
-      <div className="row">
-        <NativeComponenet />
-      </div>
+      <NativeComponenet />
     </div>
   );
 }

@@ -51,6 +51,6 @@
   float: right;
 }
 
-#nativeComponent{
+#nativeComponent, #commentCard{
   margin-top: 10px;
 }
