@@ -5,7 +5,6 @@ import NewsItem from './new_list_item';
 const NewsList = (props) => {
 
   const newsItems = props.articles.map((item) => {
-    console.log(item);
     return(
       <NewsItem
         key={item.publishedAt}

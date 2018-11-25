@@ -1,11 +1,13 @@
 import React from 'react';
 
 const LearnPage = () => {
+  const myButtonText = 'Click me and submit a form!';
+
   return (
     <div>
-      <label>Enter name</label>
+      <label htmlFor="name">Enter name</label>
       <input name="name" type="text" />
-      <button style={{backgroundColor: 'red'}}>Submit</button>
+      <button style={{ backgroundColor: 'red' }}>{myButtonText}</button>
     </div>
   );
 }

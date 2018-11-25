@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 const API_KEY = '5ba6a00bd79541d99b4b764e056a7453';
 const news_url = `https://newsapi.org/v2/everything?q=apple&from=2018-11-21&sortBy=popularity&apiKey=${API_KEY}`;
@@ -12,7 +13,13 @@ class MainIndex extends Component {
     this.state = {
       articles: []
     }
+    const currentMyTime = this.getCurrentTime();
+    const news_url = `https://newsapi.org/v2/everything?q=apple&from=${currentMyTime}&sortBy=popularity&apiKey=${API_KEY}`;
     this.getNews(news_url);
+  }
+
+  getCurrentTime(){
+    return (moment(new Date()).format("YYYY-MM-DD"))
   }
 
   getNews(url) {
