@@ -50,3 +50,7 @@
 .article-description.col-md-8{
   float: right;
 }
+
+#nativeComponent{
+  margin-top: 10px;
+}
