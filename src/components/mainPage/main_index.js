@@ -5,9 +5,9 @@ const news_url = `https://newsapi.org/v2/everything?q=apple&from=2018-11-21&sort
 
 import NewsList from './news_list';
 
-class MainIndex extends Component{
+class MainIndex extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       articles: []
@@ -15,18 +15,18 @@ class MainIndex extends Component{
     this.getNews(news_url);
   }
 
-  getNews(url){
+  getNews(url) {
     fetch(url)
       .then(response => response.json())
-      .then(articles => this.setState({articles : articles.articles}))
+      .then(articles => this.setState({ articles: articles.articles }))
       .catch(error => console.log(error));
   }
 
-  render(){
-    return(
-      <div className="news-list">
-        <NewsList articles={this.state.articles}/>
-      </div>
+  render() {
+    return (
+      <div className= "news-list" >
+      <NewsList articles={ this.state.articles } />
+        < /div>
     );
   }
 
