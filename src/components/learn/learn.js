@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LearnPage = () => {
-  const myButtonText = 'Click me and submit a form!';
+  const myButtonText = 'Click me!';
 
   return (
     <div>

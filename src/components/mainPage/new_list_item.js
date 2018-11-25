@@ -12,7 +12,6 @@ const NewsItem = (props) => {
         <div className="article-description col-md-8">{props.article.description}</div>
         <img className="img-thumbnail" src={props.article.urlToImage}/>
       </div>
-
     </li>
   )
 
