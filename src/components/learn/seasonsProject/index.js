@@ -4,15 +4,14 @@ import SeasonDisplay from './seasonDisplay';
 
 class Learn extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      seasonTitle: '',
-      latitude: null,
-      longitude: null,
-      errorMessage: ''
-    };
-  }
+//if we run with babel then constructor is not needed
+//babel implements constructor function for us
+  state = {
+    seasonTitle: '',
+    latitude: null,
+    longitude: null,
+    errorMessage: ''
+  };
 
   getGeoLocation() {
     navigator.geolocation.getCurrentPosition(
