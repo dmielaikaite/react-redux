@@ -12,8 +12,6 @@ class Learn extends Component {
       longitude: null,
       errorMessage: ''
     };
-
-    this.getGeoLocation();
   }
 
   getGeoLocation() {
@@ -26,19 +24,27 @@ class Learn extends Component {
         console.log(position.coords)
       },
       (error) => {
-        this.setState({errorMessage: error.message})
+        this.setState({ errorMessage: error.message })
       }
     );
   }
 
-//calls automatically after we render a component
-  componentDidMount(){
-    console.log('my component was rendered once')
+  //recommended to do data loading not a constructor but here
+  //calls automatically after we render a component
+  //called only once
+  componentDidMount() {
+    console.log('my component was rendered once');
+    this.getGeoLocation();
   }
 
-//if we re-rendering component then this function will be called automatically
-  componentDidUpdate(){
+  //if we re-rendering component then this function will be called automatically
+  componentDidUpdate() {
     console.log('my component was re-rendered')
+  }
+
+  //good place to do cleanup
+  componentWillUnmount() {
+
   }
 
   render() {
