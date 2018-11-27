@@ -20,7 +20,6 @@ class Learn extends Component {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
         });
-        console.log(position.coords)
       },
       (error) => {
         this.setState({ errorMessage: error.message })
