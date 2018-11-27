@@ -31,6 +31,16 @@ class Learn extends Component {
     );
   }
 
+//calls automatically after we render a component
+  componentDidMount(){
+    console.log('my component was rendered once')
+  }
+
+//if we re-rendering component then this function will be called automatically
+  componentDidUpdate(){
+    console.log('my component was re-rendered')
+  }
+
   render() {
     return (
       <div>
