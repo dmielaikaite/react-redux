@@ -35,12 +35,12 @@ const SeasonDisplay = (props) => {
   }
   if (!props.errorMessage && props.latitude) {
     return (
-      <div>
+      <div className={`season-display ${season}`}>
         {text}
         <i className={`icon-left massive ${iconName} icon`}/>
         <i className={`icon-right massive ${iconName} icon`}/>
-        <p>latitude: {props.latitude}</p>
-        <p>longitude: {props.longitude}</p>
+        {/* <p>latitude: {props.latitude}</p>
+        <p>longitude: {props.longitude}</p> */}
       </div>
     );
   }
