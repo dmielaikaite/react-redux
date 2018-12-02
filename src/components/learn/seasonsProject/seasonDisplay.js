@@ -1,6 +1,17 @@
 import React from 'react';
 import moment from 'moment';
 
+const seasonObject = {
+  winter:{
+    iconName: "snowflake",
+    text: "chilly time get some tea for yourself"
+  },
+  summer: {
+    iconName: "sun",
+    text: "beach time"
+  }
+}
+
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     return lat > 0 ? 'summer' : 'winter'
@@ -13,7 +24,7 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = (props) => {
 
   const season = getSeason(props.latitude, moment().format("M"));
-  const icon = season === 'winter' ? 'snowflake' : 'sun';
+  const {iconName, text} = seasonObject[season];
 
   if (props.errorMessage && !props.latitude) {
     return (
@@ -25,10 +36,9 @@ const SeasonDisplay = (props) => {
   if (!props.errorMessage && props.latitude) {
     return (
       <div>
-        season display: <h2> {season === 'winter' ?
-          'chilly time get some tea for yourself' :
-          'beach time'} </h2>
-        <i className={`${icon} icon`}/>
+        {text}
+        <i className={`icon-left massive ${iconName} icon`}/>
+        <i className={`icon-right massive ${iconName} icon`}/>
         <p>latitude: {props.latitude}</p>
         <p>longitude: {props.longitude}</p>
       </div>
