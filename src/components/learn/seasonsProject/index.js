@@ -37,7 +37,7 @@ class Learn extends Component {
 
   //if we re-rendering component then this function will be called automatically
   componentDidUpdate() {
-    console.log('my component was re-rendered')
+    console.log('my component was re-renderede')
   }
 
   //good place to do cleanup
