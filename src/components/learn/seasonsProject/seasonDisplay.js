@@ -1,8 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
+import Loader from '../reusableComponents/loader';
+
 const seasonObject = {
-  winter:{
+  winter: {
     iconName: "snowflake",
     text: "chilly time get some tea for yourself"
   },
@@ -24,7 +26,7 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = (props) => {
 
   const season = getSeason(props.latitude, moment().format("M"));
-  const {iconName, text} = seasonObject[season];
+  const { iconName, text } = seasonObject[season];
 
   if (props.errorMessage && !props.latitude) {
     return (
@@ -37,18 +39,14 @@ const SeasonDisplay = (props) => {
     return (
       <div className={`season-display ${season}`}>
         {text}
-        <i className={`icon-left massive ${iconName} icon`}/>
-        <i className={`icon-right massive ${iconName} icon`}/>
+        <i className={`icon-left massive ${iconName} icon`} />
+        <i className={`icon-right massive ${iconName} icon`} />
         {/* <p>latitude: {props.latitude}</p>
         <p>longitude: {props.longitude}</p> */}
       </div>
     );
   }
-  return (
-    <div>
-      Loading....
-    </div>
-  );
+  return <Loader message="please agree"/>
 }
 
 export default SeasonDisplay;
