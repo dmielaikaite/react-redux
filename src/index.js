@@ -6,6 +6,7 @@ import MainIndex from './components/mainPage/main_index';
 import VidoeIndex from './components/youtubePage/video_index';
 import LearnPage from './components/learn/learn';
 import Learn from './components/learn/seasonsProject/index';
+import Pictures from './components/learn/picturesApiProject/index';
 
 class App extends Component{
 
@@ -23,18 +24,22 @@ class App extends Component{
                   <Link className="nav-link" to='/youtube'> youtube </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to='/learn'> comments </Link>
+                  <Link className="nav-link" to='/comments'> comments </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to='/learnv2'> seasons </Link>
+                  <Link className="nav-link" to='/seasons'> seasons </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to='/pictures'> picture </Link>
                 </li>
               </ul>
             </nav>
 
             <Route path='/' exact component={MainIndex} />
             <Route path='/youtube' component={VidoeIndex} />
-            <Route path='/learn' component={LearnPage} />
-            <Route path='/learnv2' component={Learn} />
+            <Route path='/comments' component={LearnPage} />
+            <Route path='/seasons' component={Learn} />
+            <Route path='/pictures' component={Pictures} />
           </div>
       </Router>
     );
