@@ -7,20 +7,15 @@ import './style.css';
 
 class Pictures extends Component {
 
-  //calls after render
-  componentDidMount(){
-    console.log('componentDidMount')
-  }
-
-  onSearchSubmit(searchText){
-    console.log('from onSearchSubmit',searchText)
+  async onSearchSubmit(searchText){
     //addres and object
-    axios.get('https://api.unsplash.com/search/photos', {
+    const response = await axios.get('https://api.unsplash.com/search/photos', {
       params: {query: searchText},
       headers: {
         Authorization: 'Client-ID bead85423c67fe55eb831a9e626888f756e003087348b5c933d46319f14f51c8'
       }
     });
+    console.log(response.data.results);
   }
 
   render() {
