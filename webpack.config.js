@@ -17,15 +17,15 @@ module.exports = {
         },
       },
       {
-          test: /\.css?$/,
-          loader: 'style-loader!css-loader',
-          options: {
-            sourceMap: true, // allow source maps (allows css debugging)
-            modules: true, // allow css module imports
-            camelCase: true, // allow camel case imports
-            localIdentName: '[local]___[hash:base64:5]', // set imported classNames with a original className and a hashed string in the DOM, for example: "exampleClassName__2fMQK"
-          },
-       }
+        test: /\.css?$/,
+        loader: 'style-loader!css-loader',
+        options: {
+          sourceMap: true, // allow source maps (allows css debugging)
+          modules: true, // allow css module imports
+          camelCase: true, // allow camel case imports
+          localIdentName: '[local]___[hash:base64:5]', // set imported classNames with a original className and a hashed string in the DOM, for example: "exampleClassName__2fMQK"
+        },
+      }
     ]
   },
   resolve: {

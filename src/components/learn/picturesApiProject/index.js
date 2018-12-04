@@ -11,12 +11,14 @@ class Pictures extends Component {
     console.log('componentDidMount')
   }
 
+  onSearchSubmit(searchText){
+    console.log('from onSearchSubmit',searchText)
+  }
+
   render() {
     return (
-      <div className="ui container" style={{marginTop: '10px'}}>
-        <p className="testing">working with style</p>
-
-        <SearchBar/>
+      <div className="ui container">
+        <SearchBar onSearchSubmit={this.onSearchSubmit}/>
       </div>
     );
   }
