@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: ['./src/index.js'],
   output: {
@@ -7,12 +9,24 @@ module.exports = {
   },
   module: {
     loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
-      }
-    }]
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015', 'stage-1']
+        },
+      },
+      {
+          test: /\.css?$/,
+          loader: 'style-loader!css-loader',
+          options: {
+            sourceMap: true, // allow source maps (allows css debugging)
+            modules: true, // allow css module imports
+            camelCase: true, // allow camel case imports
+            localIdentName: '[local]___[hash:base64:5]', // set imported classNames with a original className and a hashed string in the DOM, for example: "exampleClassName__2fMQK"
+          },
+       }
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -24,5 +38,5 @@ module.exports = {
       aggregateTimeout: 300,
       poll: 1000
     }
-  }
+  },
 };
