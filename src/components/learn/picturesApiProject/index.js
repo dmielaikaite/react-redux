@@ -23,7 +23,7 @@ class Pictures extends Component {
     return (
       <div className="ui container">
         <SearchBar onSearchSubmit={this.onSearchSubmit} />
-        <ImageList images={this.state.images}/>
+        <ImageList images={this.state.images} />
       </div>
     );
   }
