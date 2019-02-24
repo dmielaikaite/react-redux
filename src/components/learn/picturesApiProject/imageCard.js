@@ -4,18 +4,26 @@ class ImageCard extends Component{
   constructor(props){
     super(props);
     this.imageRef = React.createRef();
+    this.state = { spans: 0 };
   }
 
 //called after render
   componentDidMount(){
-    console.log(this.imageRef.current.clientHeight);
+    //use callback if it's doesn't show. basically it's means that we didn't load the image yet
+    this.imageRef.current.addEventListener('load', this.setSpans)
+  }
+
+  setSpans = () => {
+    const height = this.imageRef.current.clientHeight;
+    const spans = Math.ceil(height / 10 + 1);
+    this.setState({ spans })
   }
 
   render() {
     const { description, urls } = this.props.image;
 
     return (
-      <div>
+      <div style={{ gridRowEnd: `span ${this.state.spans}`}}>
         <img
           ref={this.imageRef}
           alt={description}
