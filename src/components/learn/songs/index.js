@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { selectSong } from '../../../actions';
+import SongDetail from './songDetail';
 
 class Songs extends Component {
 
@@ -16,7 +17,6 @@ class Songs extends Component {
               Select
             </button>
           </div>
-
           <div className="content">
             {song.title}
           </div>
@@ -34,6 +34,7 @@ class Songs extends Component {
               {this.renderList()}
             </div>
           </div>
+          <SongDetail />
         </div>
       </div>
     )
@@ -47,4 +48,5 @@ const mapStateToProps = (state) => {
 }
 
 //our component as second function call
+//connect function automatically put tp dispatch
 export default connect(mapStateToProps, { selectSong })(Songs);
