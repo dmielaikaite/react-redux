@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // import { selectSong } from '../../../actions';
 
-const Songs = () => {
-  return(
-    <div>
-      Songs
-    </div>
-  );
+class Songs extends Component {
+  render() {
+    return(
+      <div>
+        songs
+      </div>
+    )
+  };
 }
 
-export default Songs;
+const mapStateToProps = (state) => {
+  return{
+    songs: state.songs
+  };
+}
+
+//our component as second function call
+export default connect(mapStateToProps)(Songs);
