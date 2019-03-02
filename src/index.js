@@ -7,6 +7,8 @@ import VidoeIndex from './components/youtubePage/video_index';
 import LearnPage from './components/learn/learn';
 import Learn from './components/learn/seasonsProject/index';
 import Pictures from './components/learn/picturesApiProject/index';
+import Forum from './components/learn/forumProject/index';
+import Songs from './components/learn/songs/index';
 
 class App extends Component{
 
@@ -32,6 +34,12 @@ class App extends Component{
                 <li className="nav-item">
                   <Link className="nav-link" to='/pictures'> picture </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to='/forum'> forum </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to='/songs'> Songs </Link>
+                </li>
               </ul>
             </nav>
 
@@ -40,6 +48,9 @@ class App extends Component{
             <Route path='/comments' component={LearnPage} />
             <Route path='/seasons' component={Learn} />
             <Route path='/pictures' component={Pictures} />
+            <Route path='/forum' component={Forum} />
+            <Route path='/songs' component={Songs} />
+
           </div>
       </Router>
     );
