@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VideoListItem = ({video, handleVideoSelect}) => {
+const VideoStationListItem = ({video, handleVideoSelect}) => {
   const imageURL = video.snippet.thumbnails.default.url;
 
   return(
@@ -19,4 +19,4 @@ const VideoListItem = ({video, handleVideoSelect}) => {
 
 };
 
-export default VideoListItem;
+export default VideoStationListItem;

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class ChatBarMessageListItem extends Component {
+class ChatBarMessageStationListItem extends Component {
   render(){
     return(
       <div>
-        ChatBarMessageListItem
+        ChatBarMessageStationListItem
       </div>
     )
   }
 }
 
-export default ChatBarMessageListItem;
+export default ChatBarMessageStationListItem;

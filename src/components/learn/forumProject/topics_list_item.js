@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const TopicsListITem = ({topic}) => {
+const TopicsStationListItem = ({topic}) => {
 
   return(
     <div className="single_topic">
@@ -10,4 +10,4 @@ const TopicsListITem = ({topic}) => {
 
 }
 
-export default TopicsListITem;
+export default TopicsStationListItem;

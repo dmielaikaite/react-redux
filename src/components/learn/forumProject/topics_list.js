@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import TopicsListITem from './topics_list_item';
+import TopicsStationListItem from './topics_list_item';
 
 const TopicsList = ({topics_list}) => {
 
   const topics = topics_list.map((topic) => {
     return(
-      <TopicsListITem
+      <TopicsStationListItem
         topic={topic.name}
         key={topic.id}/>
     )
