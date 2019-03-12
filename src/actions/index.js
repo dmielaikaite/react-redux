@@ -1,3 +1,5 @@
+import jsonPlaceholder from '../api/jsonPlaceholder';
+
 //action creator
 export const selectSong = song => {
   //return an action
@@ -8,7 +10,9 @@ export const selectSong = song => {
 }
 
 export const fetchPosts = () => {
-  return {
-    type: 'FETCH_POST'
-  }
+  //getState argument exist at thunk
+  return async (dispatch) => {
+    const response = await jsonPlaceholder.get('/posts');
+    dispatch({ type: 'FETCH_POST', payload: response })
+  };
 }

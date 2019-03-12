@@ -5,6 +5,7 @@ import { fetchPosts } from '../../../actions';
 //class comment makes us sure to use react lifecycle methods
 class PostList extends Component {
 
+//calling our action before render
   componentDidMount() {
     this.props.fetchPosts();
   }
