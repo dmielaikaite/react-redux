@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import UserHeader from './userHeader';
+
+
 import { fetchPosts } from '../../../actions';
 //class comment makes us sure to use react lifecycle methods
 class PostList extends Component {
@@ -19,6 +22,9 @@ class PostList extends Component {
               <div className="description">
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
+              </div>
+              <div>
+                <UserHeader userId={post.userId} />
               </div>
             </div>
         </div>
