@@ -18,20 +18,33 @@ export const fetchPosts = () => {
   };
 }
 
-// export const fetchUser = (id) => {
-//   return async (dispatch) => {
-//     const response = await jsonPlaceholder.get(`/users/${id}`);
-//     dispatch({ type: 'FETCH_USER', payload: response.data})
-//   }
-// }
-
-export const fetchUser = (id) => {
-  return (dispatch) => {
-    _fetchUser(id, dispatch);
-  }
+//calling fetchPostsAndUsers and then return async dispatch{}
+//pass dispatch as a first argument
+export const fetchPostsAndUsers = () => async (dispatch, getState) =>{
+  await dispatch(fetchPosts());
+  //go through all post and return only userId
+  //_uniq return only uniq entries
+  const userId = _.uniq(_.map(getState().posts, 'userId'));
+  //for each id we are calling fetchUser
+  userId.forEach( id => dispatch(fetchUser(id)));
 }
 
-const _fetchUser = _.memoize(async(id, dispatch) => {
-  const response = await jsonPlaceholder.get(`/users/${id}`);
-  dispatch({ type: 'FETCH_USER', payload: response.data})
-});
+//fetch one time each user
+//with _.memoize
+// export const fetchUser = (id) => {
+//   return (dispatch) => {
+//     _fetchUser(id, dispatch);
+//   }
+// }
+// const _fetchUser = _.memoize(async(id, dispatch) => {
+//   const response = await jsonPlaceholder.get(`/users/${id}`);
+//   dispatch({ type: 'FETCH_USER', payload: response.data})
+// });
+
+//new version of non memoize
+export const fetchUser = (id) => {
+    return async(dispatch) => {
+      const response = await jsonPlaceholder.get(`/users/${id}`);
+      dispatch({ type: 'FETCH_USER', payload: response.data})
+    }
+}

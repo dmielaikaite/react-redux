@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import UserHeader from './userHeader';
 
 
-import { fetchPosts } from '../../../actions';
+import { fetchPostsAndUsers } from '../../../actions';
 //class comment makes us sure to use react lifecycle methods
 class PostList extends Component {
 
 //calling our action before render
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchPostsAndUsers();
   }
 
   renderList = () => {
@@ -48,4 +48,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(PostList);
